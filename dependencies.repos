@@ -35,6 +35,11 @@ repositories:
     url: git@github.com:ros/geometry2.git
     version: noetic-devel
 
+  control_toolbox:
+    type: git
+    url: git@github.com:ros-controls/control_toolbox.git
+    version: ros2-master
+
   nlopt_ros:
     type: git
     url: git@github.com:ctu-mrs/nlopt_ros.git
