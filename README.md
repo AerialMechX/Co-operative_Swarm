@@ -89,7 +89,7 @@ Install GeographicLib datasets:
 > probably you will get error when when building mavros_extras:
 - When inspecting the gps_status.cpp file, it seemed that GPS_RAW and GPS_RAW2 had the same fields.
 So, I added the missing field to GPS2_RAW in the mavlink/message_definitions/v1.0/common.xml file, and the issue was resolved.
-
+The code I added to GPS2_RAW with id=124 in the common.xml file is as follows: 
 ```bash
 <message id="124" name="GPS2_RAW">
       <description>Second GPS data.</description>
@@ -105,8 +105,8 @@ So, I added the missing field to GPS2_RAW in the mavlink/message_definitions/v1.
 ...
 ```
 
-The code I added to GPS2_RAW with id=124 in the common.xml file is as follows: 
-Also after cloning whole repo to install all dependencies run:
+
+#### Also after cloning whole repo to install all dependencies run:
 
 ```
 vcs import < dependencies.repos
