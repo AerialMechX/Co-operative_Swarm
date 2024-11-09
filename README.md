@@ -57,7 +57,7 @@ First, clone the PX4 repository and set up the environment.
 ```bash
 git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 
-```bash
+```
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 
 
