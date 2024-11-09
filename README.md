@@ -28,3 +28,10 @@ export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo-classic
 
 install_geographiclib_datasets.sh
 
+
+Also after cloning whole repo to install all dependencies run:
+
+vcs import < dependencies.repos
+
+
+DONT_RUN=1 make px4_sitl_default gazebo-classic
