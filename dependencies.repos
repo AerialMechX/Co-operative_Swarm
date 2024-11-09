@@ -1,55 +1,55 @@
 repositories:
-  dependency1:
+  eigen_catkin:
     type: git
     url: git@github.com:ethz-asl/eigen_catkin.git
     version: devel/3.3.7
     
-  dependency2:
+  eigen_checks:
     type: git
     url: git@github.com:ethz-asl/eigen_checks.git
     version: master
 
-  dependency3:
+  mavros_controllers:
     type: git
     url: git@github.com:Jaeyoung-Lim/mavros_controllers.git
     version: master
 
-  dependency4:
+  geometry2:
     type: git
     url: git@github.com:ros/geometry2.git
     version: noetic-devel
 
-  dependency5:
+  nlopt_ros:
     type: git
     url: git@github.com:ctu-mrs/nlopt_ros.git
     version: master
 
-  dependency6:
+  mav_trajectory_generation:
     type: git
     url: git@github.com:ethz-asl/mav_trajectory_generation.git
     version: master
 
-  dependency7:
+  pluginlib:
     type: git
     url: git@github.com:ros/pluginlib.git
     version: noetic-devel
 
-  dependency8:
+  realtime_tools:
     type: git
     url: git@github.com:ros-controls/realtime_tools.git
     version: noetic-devel
 
-  dependency9:
+  ros_comm:
     type: git
     url: git@github.com:ros/ros_comm.git
     version: noetic-devel
 
-  dependency10:
+  ros_comm:
     type: git
-    url: git@github.com:mavlink/mavros.git
+    url: git@github.com:mavlink/c.git
     version: master
 
-  dependency11:
+  vrpn_client_ros:
     type: git
     url: git@github.com:ros-drivers/vrpn_client_ros.git
     version: foxy-devel
