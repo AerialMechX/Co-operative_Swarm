@@ -57,3 +57,7 @@ Also after cloning whole repo to install all dependencies run:
 ```
 vcs import < dependencies.repos
 ```
+### Now launch the SITL by command:
+```
+roslaunch px4 posix_sitl.launch
+```
