@@ -48,10 +48,64 @@ To modify this failsafe behavior, set the `NAV_DLL_ACT` parameter to the desired
 
 ---
 
-## Inside mavros also install 
+## Installing Mavros and its dependencies
 
-> install_geographiclib_datasets.sh
+### Binary Installation (Debian / Ubuntu)
+```
+sudo apt-get install ros-${ROS_DISTRO}-mavros ros-${ROS_DISTRO}-mavros-extras ros-${ROS_DISTRO}-mavros-msgs
+```
+Then install GeographicLib datasets by running the install_geographiclib_datasets.sh script:
+```
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+sudo bash ./install_geographiclib_datasets.sh
+```
+### Source Installation
+```
+mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws
+catkin init
+wstool init src
+```
+> sudo apt-get install python-catkin-tools python-rosinstall-generator -y
 
+Install MAVROS from source using either released or latest version:
+
+```bash
+rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
+```
+
+Create workspace & deps:
+
+```bash
+wstool merge -t src /tmp/mavros.rosinstall
+wstool update -t src -j4
+rosdep install --from-paths src --ignore-src -y
+```
+Install GeographicLib datasets:
+
+```bash
+./src/mavros/mavros/scripts/install_geographiclib_datasets.sh
+```
+> probably you will get error when when building mavros_extras:
+- When inspecting the gps_status.cpp file, it seemed that GPS_RAW and GPS_RAW2 had the same fields.
+So, I added the missing field to GPS2_RAW in the mavlink/message_definitions/v1.0/common.xml file, and the issue was resolved.
+
+```bash
+<message id="124" name="GPS2_RAW">
+      <description>Second GPS data.</description>
+      ...
+      <extensions/>
+      <field type="int32_t" name="alt_ellipsoid" units="mm">Altitude (above WGS84, EGM96 ellipsoid). Positive for up.</field>
+      <field type="uint32_t" name="h_acc" units="mm">Position uncertainty.</field>
+      <field type="uint32_t" name="v_acc" units="mm">Altitude uncertainty.</field>
+      <field type="uint32_t" name="vel_acc" units="mm">Speed uncertainty.</field>
+      <field type="uint32_t" name="hdg_acc" units="degE5">Heading / track uncertainty</field>
+      <field type="uint16_t" name="yaw" units="cdeg">Yaw in earth frame from north. Use 0 if this GPS does not provide yaw. Use 65535 if this GPS is configured to provide yaw and is currently unable to provide it. Use 36000 for north.</field>
+</message>
+...
+```
+
+The code I added to GPS2_RAW with id=124 in the common.xml file is as follows: 
 Also after cloning whole repo to install all dependencies run:
 
 ```
