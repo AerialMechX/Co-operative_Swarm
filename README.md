@@ -34,3 +34,28 @@ Also after cloning whole repo to install all dependencies run:
 vcs import < dependencies.repos
 
 
+# Guide for PX4 SITL Setup with MAVROS and Gazebo-Classic
+
+This guide covers the setup for PX4 SITL with MAVROS and Gazebo-Classic, including handling Data Link Loss, cloning the PX4 repository, and installing required dependencies.
+
+---
+
+## Data Link Loss
+
+The Data Link Loss failsafe, which handles the unavailability of external data via MAVLink, is enabled by default. This setup requires the simulation to be connected to a Ground Control Station (GCS), SDK, or another MAVLink application. 
+
+To modify this failsafe behavior, set the `NAV_DLL_ACT` parameter to the desired failsafe action. For instance, set it to `0` to disable the failsafe.
+
+> **Note:** All parameters in SITL, including `NAV_DLL_ACT`, will reset when you run `make clean`.
+
+---
+
+## Cloning the PX4 Repository
+
+First, clone the PX4 repository and set up the environment.
+
+```bash
+git clone https://github.com/PX4/PX4-Autopilot.git --recursive
+bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
+
+
