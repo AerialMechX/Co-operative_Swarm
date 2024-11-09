@@ -66,10 +66,13 @@ cd ~/catkin_ws
 catkin init
 wstool init src
 ```
-> sudo apt-get install python-catkin-tools python-rosinstall-generator -y
+Also install other dependencies:
+```bash
+ sudo apt-get install python-catkin-tools python-rosinstall-generator -y
+```
 
 Install MAVROS from source using either released or latest version:
-
+- Released/stable
 ```bash
 rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
 ```
