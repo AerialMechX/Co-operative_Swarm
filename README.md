@@ -111,7 +111,7 @@ The code I added to GPS2_RAW with id=124 in the common.xml file is as follows:
 ```
 vcs import < dependencies.repos
 ```
-### Now launch the SITL by command:
+#### Now launch the SITL by command:
 ```
 roslaunch px4 posix_sitl.launch
 ```
