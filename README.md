@@ -62,7 +62,10 @@ You may need to install the following additional dependencies:
 ```bash
 sudo apt-get install protobuf-compiler libeigen3-dev libopencv-dev -y
 ```
-Make the px4-sitl from /px-4_autopilot
+
+reboot PC
+
+Make the px4-sitl inside /px-4_autopilot
 
 ```bash
 DONT_RUN=1 make px4_sitl_default gazebo-classic
@@ -79,9 +82,9 @@ To modify this failsafe behavior, set the `NAV_DLL_ACT` parameter to the desired
 
 ---
 
-## to run mavros also install 
+## Inside mavros also install 
 
-< install_geographiclib_datasets.sh
+> install_geographiclib_datasets.sh
 
 Also after cloning whole repo to install all dependencies run:
 
