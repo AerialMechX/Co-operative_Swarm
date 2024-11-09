@@ -49,14 +49,12 @@ git clone https://github.com/PX4/PX4-Autopilot.git --recursive
 ```bash
 bash ./PX4-Autopilot/Tools/setup/ubuntu.sh
 ```
-```bash
+
 
 ## add the source line in .bashrc file :
-source Tools/simulation/gazebo-classic/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
-```
 ```bash
+source Tools/simulation/gazebo-classic/setup_gazebo.bash $(pwd) $(pwd)/build/px4_sitl_default
 export ROS_PACKAGE_PATH=$ROS_PACKAGE_PATH:$(pwd)/Tools/simulation/gazebo-classic/sitl_gazebo-classic
-
 ```
 
 You may need to install the following additional dependencies:
@@ -81,6 +79,12 @@ To modify this failsafe behavior, set the `NAV_DLL_ACT` parameter to the desired
 
 ---
 
+## to run mavros also install 
 
+< install_geographiclib_datasets.sh
 
+Also after cloning whole repo to install all dependencies run:
 
+```
+vcs import < dependencies.repos
+```
