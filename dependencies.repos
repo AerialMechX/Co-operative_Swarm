@@ -2,17 +2,23 @@ repositories:
   eigen_catkin:
     type: git
     url: git@github.com:ethz-asl/eigen_catkin.git
-    version: devel/3.3.7
+    version: master
 
   catkin_simple:
     type: git
     url: git@github.com:catkin/catkin_simple.git
-    version: devel/3.3.7
+    version: master
 
   mav_comm:
     type: git
     url: git@github.com:ethz-asl/mav_comm.git
-    version: devel/3.3.7
+    version: master
+
+  glog_catkin:
+    type: git
+    url: git@github.com:ethz-asl/glog_catkin.git
+    version: master
+
 
   eigen_checks:
     type: git
