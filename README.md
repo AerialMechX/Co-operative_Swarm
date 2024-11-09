@@ -34,4 +34,3 @@ Also after cloning whole repo to install all dependencies run:
 vcs import < dependencies.repos
 
 
-DONT_RUN=1 make px4_sitl_default gazebo-classic
