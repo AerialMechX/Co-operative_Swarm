@@ -118,7 +118,7 @@ vcs import < dependencies.repos
 ```
 roslaunch px4 posix_sitl.launch
 ```
-###### <span style="color:red">Sometime after building the PX-4_AUTOPILOT cause error when launcing gazebo with iris and px-4, you can try:</span>
+<span style="color:red">Sometime after building the PX-4_AUTOPILOT cause error when launcing gazebo with iris and px-4, you can try:</span>
 
 Delete,
 > ~/.ros/test_data  and other logs
