@@ -121,5 +121,5 @@ roslaunch px4 posix_sitl.launch
 ###### Sometime after building the PX-4_AUTOPILOT cause error when launcing gazebo with iris and px-4, you can try:
 
 Delete,
-< ~/.ros/test_data  and other logs
+> ~/.ros/test_data  and other logs
 then launch again, [The solution thread for that](https://github.com/PX4/PX4-Autopilot/issues/21837) 
